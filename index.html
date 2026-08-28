@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">My cinema list</p>
+          <h1>Movie Watchlist</h1>
+        </div>
+
+        <div class="stats" aria-label="Movie statistics">
+          <div class="stat-card">
+            <span>Total</span>
+            <strong id="totalMovies">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Watched</span>
+            <strong id="watchedMovies">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Left</span>
+            <strong id="remainingMovies">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel form-panel">
+          <h2>Add a Movie</h2>
+
+          <form id="movieForm">
+            <label>
+              <span>Title</span>
+              <input id="movieTitle" type="text" placeholder="e.g. Inception" required />
+            </label>
+
+            <div class="two-column">
+              <label>
+                <span>Genre</span>
+                <input id="movieGenre" type="text" placeholder="Sci-Fi" />
+              </label>
+
+              <label>
+                <span>Year</span>
+                <input id="movieYear" type="number" min="1888" max="2100" placeholder="2024" />
+              </label>
+            </div>
+
+            <label>
+              <span>Status</span>
+              <select id="movieStatus">
+                <option value="want-to-watch">Want to watch</option>
+                <option value="watched">Watched</option>
+              </select>
+            </label>
+
+            <button type="submit" class="primary-btn">Add to watchlist</button>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="toolbar">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search movies..."
+              aria-label="Search movies"
+            />
+            <button id="clearAllBtn" class="secondary-btn" type="button">Clear All</button>
+          </div>
+
+          <ul id="movieList" class="movie-list" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="functioning.js"></script>
+  </body>
+</html>
